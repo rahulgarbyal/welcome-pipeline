@@ -1,0 +1,24 @@
+
+name: Welcome Message Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Display welcome message
+      - name: Display Welcome Message
+        run: echo "Welcome to the DevOps Lab!"
+
+      # Step 3: Display contents of welcome.txt
+      - name: Display File Contents
+        run: cat welcome.txt
